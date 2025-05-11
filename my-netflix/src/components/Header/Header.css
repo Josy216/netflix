@@ -1,0 +1,31 @@
+.OuterHeader{
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(20, 20, 20);
+    color: white;
+    transition: all 0.5s;
+    transition-timing-function: ease-in;
+    height: 10vh;
+    z-index: 1;
+    /* background-color: red; */
+}
+.Headerconainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding: 0 20px;
+}
+ul{
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+    list-style: none;
+    gap: 20px;
+    
+}

@@ -1,11 +1,13 @@
 
 import './App.css'
-import Home from './Home'
+import Home from './pages/Home.jsx'
 function App() {
 
   return (
     <>
+    <div className="app">
     <Home />
+    </div>
     </>
   )
 }
