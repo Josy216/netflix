@@ -1,56 +1,45 @@
-import React from 'react'
 import './footer.css'
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
+import React from 'react'
+import youtubeIcon from '../../Asset/assets/youtube_icon.png'
+import twiterIcon from '../../Asset/assets/twitter_icon.png'
+import instagramIcon from '../../Asset/assets/instagram_icon.png'
+import facebookIcon from '../../Asset/assets/facebook_icon.png'
 function Footer() {
   return (
-      <div className="footer">
-        <div className="icon">
-        <div className="icons">
-          <ul>
-            <li> <FacebookOutlinedIcon /> </li>
-            <li> <YouTubeIcon /> </li>
-            <li> <InstagramIcon /> </li>
-          </ul>
-        </div>
-        </div>
-        <div>
-          <ul>
-            <li>Audio Description</li>
-            <li>Investor Relations</li>
-            <li>Legal Notices</li>
-          </ul>
-        </div>
-        <div>
-          <ul>
-            <li>Help Center</li>
-            <li>Jobs</li>
-            <li>Cookie Preferences</li>
-            <li>Legal Notices</li>
-          </ul>
-        </div>
-        <div>
-          <ul>
-            <li>Gift Cards</li>
-            <li>Terms of Use</li>
-            <li>Corporate Information</li>
-          </ul>
-        </div>
-        <div>
-          <ul>
-            <li>Media Center</li>
-            <li>Privacy</li>
-            <li>Contact Us</li>
-          </ul>
-        </div>
-        <div className="servicescode">
-          <p>service code</p>
-        </div>
-        <div className="copyright">
-          <p>© 1997-2023 Netflix, Inc.</p>
-        </div>
+    <div className='footer'>
+      <div className="footerIcon">
+        <a href="https://www.facebook.com/joseph  Teka">
+        <img src={facebookIcon} alt="" />
+        </a>
+        <a href="https://www.instagram.com/joseph teck/">
+        <img src={instagramIcon} alt="" />
+        </a>
+        <a href="https://twitter.com/Joseph326533100">
+        <img src={twiterIcon} alt="" />
+        </a>
+        <a href="https://www.youtube.com/@Netflix">
+        <img src={youtubeIcon} alt="" /></a>
       </div>
+      <ul>
+        <li>Audio discription </li>
+        <li>Help center</li>
+        <li>Gift cards</li>
+        <li>media center</li>
+        <li>Investor Relation</li>
+        <li>Jobs</li>
+        <li>Terms of use</li>
+        <li>Privacy</li>
+        <li>Legal Notices</li>
+        <li>Cookie preference</li>
+        <li>Corporate Information</li>
+        <li>Contact us </li>
+      </ul>
+      <p className="copyrighttext">
+        &copy; 1997-2023    Netflix, Inc. 
+        &copy; 2025 | Joseph Teka
+      </p>
+      
+    </div>
   )
 }
 

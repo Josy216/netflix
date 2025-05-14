@@ -8,5 +8,7 @@
     box-sizing: border-box;
 }
 body{
-    background: #111;
+    background: black;
+    font-family: 'poppins', Arial, Helvetica, sans-serif;
+    color: #fff;
 }

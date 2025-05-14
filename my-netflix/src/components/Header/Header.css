@@ -1,31 +1,86 @@
-.OuterHeader{
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgb(20, 20, 20);
-    color: white;
-    transition: all 0.5s;
-    transition-timing-function: ease-in;
-    height: 10vh;
-    z-index: 1;
-    /* background-color: red; */
-}
-.Headerconainer{
+.navbar{
+    width: 100%;
+    padding: 20px 6%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    padding: 0 20px;
+    position: fixed;
+    font-size: 14px;
+    color: #e5e5e5;
+    background: linear-gradient(180deg, rgba(0,0,0,0.7) 10%, transparent);
+    z-index: 1;
 }
-ul{
-    width: 90%;
+.navbarleft{
+     display: flex;
+     align-items: center;
+     gap: 50px;
+}
+.navbarleft img{
+    width: 90px;
+
+}
+.navbarleft  ul{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 10vh;
     list-style: none;
     gap: 20px;
     
+}
+.navbarleft ul li{
+    cursor: pointer;
+}
+.navbarright{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.navbarright .icons{
+    width: 20px;
+    cursor: pointer;
+}
+.navbarright .profile{
+    border-radius: 4px;
+    width: 35px;
+}
+.navbarprofile{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+}
+.dropdown{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: max-content;
+    background: #191919;
+    padding: 18px 22px;
+    border-radius: 2px;
+    text-decoration: underline;
+    z-index: 1;
+    display: none;
+}
+.dropdown p{
+    font-size: 13px;
+    cursor: pointer;
+}
+.navbarprofile:hover .dropdown{
+    display: block;
+}
+.navblack{
+    background: #141414;
+} 
+@media (max-width: 980px) {
+    .navbar{
+        padding: 20px 4%;
+    }
+    .navbar img{
+        height: 20px;
+    }
+    .navbarleft ul{
+        display: none;
+    }
+.navbarleft img{
+    width: 90px;
+
+}
 }
