@@ -3,7 +3,6 @@ import './titleCard.css'
 import { Link } from 'react-router-dom';
 // import cardsData from '../../Asset/assets/cards/Cards_data'
 const API_KEY = import.meta.env.VITE_API_KEY;
-console.log(API_KEY);
 
 function TitleCard({title,category}) {
   const [apiData, setApiData] = useState([]);
