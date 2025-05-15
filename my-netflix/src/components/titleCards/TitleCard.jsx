@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 // import cardsData from '../../Asset/assets/cards/Cards_data'
 const API_KEY = import.meta.env.VITE_API_KEY;
 
-function TitleCard({title,category}) {
+
+function TitleCard({title, category}) {
   const [apiData, setApiData] = useState([]);
   const cardsRef = useRef();
   const options = {
@@ -23,8 +24,6 @@ function TitleCard({title,category}) {
 
   }
   useEffect(()=>{
-
-    
 fetch(`https://api.themoviedb.org/3/movie/${category?category:"now_playing"}?language=en-US&page=1`, options)
   .then(res => res.json())
   .then(res => setApiData(res.results))
@@ -38,7 +37,7 @@ fetch(`https://api.themoviedb.org/3/movie/${category?category:"now_playing"}?lan
       <div className="cardlist" ref={cardsRef}>
         {apiData.map((card, index)=>{
           return <Link to={`/player/${card.id}`} className="card" key={index}>
-             <img src={`https://image.tmdb.org/t/p/w500` + card.backdrop_path} alt="" />
+            <img src={`https://image.tmdb.org/t/p/w500${card.backdrop_path}`} alt="" />
              <p>{card.original_title}</p>
           </Link >
         })}

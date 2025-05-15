@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import './player.css'
 import { useNavigate, useParams } from 'react-router-dom'
 import backarrow from '../../Asset/assets/back_arrow_icon.png'
+
+
+const API_KEY = import.meta.env.VITE_API_KEY;
 function Player() {
   const navigate = useNavigate();
 
@@ -18,7 +21,7 @@ const options = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0MGY4ODc5NDRkMDc1YzQzMTdjMjdjZGI0ZWFhZjJiOCIsIm5iZiI6MTc0Njk2NDE5OC40ODEsInN1YiI6IjY4MjA4ZWU2YTliY2UwZTU4NjczOGMzMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.rdO74ME72p523uCMfaT2HzQ7-6OJhdcU5dSG57HDzfw'
+    Authorization: 'Bearer ' + API_KEY
   }
 };
 

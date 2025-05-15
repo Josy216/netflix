@@ -6,14 +6,21 @@ import { createUserWithEmailAndPassword,
 signOut } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 import { addDoc,collection, getFirestore } from "firebase/firestore";
+
+const FIRE_KEY = import.meta.env.VITE_FIRE_KEY;
+const APP_KEY = import.meta.env.VITE_APP_KEY;
+const MESSAGE_KEY = import.meta.env.VITE_MESSAGE_KEY;
+const AUTO_KEY = import.meta.env.VITE_AUTO_KEY;
+const STORAGE_KEY = import.meta.env.VITE_STORAGE_KEY;
+const PROJECTED_KEY = import.meta.env.VITE_PROJECTED_KEY;
 import { toast } from "react-toastify";
 const firebaseConfig = {
-  apiKey: "AIzaSyDl8NayxM4c1VFpcQ5iwhO0SCoZzFWG-1c",
-  authDomain: "netflix-clone-222e3.firebaseapp.com",
-  projectId: "netflix-clone-222e3",
-  storageBucket: "netflix-clone-222e3.firebasestorage.app",
-  messagingSenderId: "322933929052",
-  appId: "1:322933929052:web:7aff4f211fba0f27226299"
+  apiKey: FIRE_KEY,
+  authDomain: AUTO_KEY,
+  projectId: PROJECTED_KEY,
+  storageBucket: STORAGE_KEY,
+  messagingSenderId: MESSAGE_KEY,
+  appId:  APP_KEY 
 };
 
 const app = initializeApp(firebaseConfig);
