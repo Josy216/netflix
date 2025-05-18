@@ -9,7 +9,6 @@
     display: flex;
     gap: 10px;
     overflow-x: scroll;
-
 }
 .cardlist::-webkit-scrollbar{
     display: none;
@@ -30,6 +29,18 @@
     color: #fff;
 }
 
+.player iframe{
+    width: 90%;
+    position: relative;
+    border-radius: 10px;
+}
+.player .close{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 55px;
+
+}
 @media (max-width:800px){
     
     .cardlist{
@@ -63,4 +74,10 @@
     .cardlist h2{
         font-size: 15px;
     }
+}
+
+.poster{
+    width: 140px !important;
+    height: auto;
+
 }

@@ -1,6 +1,5 @@
 .hero{
     position: relative;
-
 }
 .bannerimage{
     width: 100%;
@@ -18,10 +17,25 @@
      max-width: 420px;
      margin-bottom: 30px;
 }
-.herocaption p{
+.herocaption h1{
+    color: #FFFFFF;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  max-width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.herocaption .overview{
     max-width: 700px;
     font-size: 17px;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden; 
 }
 .herobtn{
     display: flex;

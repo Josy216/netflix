@@ -1,8 +1,6 @@
 import { Routes, Route, useNavigate } from 'react-router-dom'
-
-
-  import { ToastContainer } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 import './App.css'
 import Home from './pages/Home.jsx'
 import Login from './pages/login/Login.jsx'
@@ -12,9 +10,6 @@ import {  useEffect } from 'react'
 import { auth } from './Firebase.js' 
 
 function App() {
-  
-
-
   const navigate = useNavigate();
 useEffect(() => {  
  

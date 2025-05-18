@@ -1,5 +1,4 @@
 import './footer.css'
-import React from 'react'
 import youtubeIcon from '../../Asset/assets/youtube_icon.png'
 import twiterIcon from '../../Asset/assets/twitter_icon.png'
 import instagramIcon from '../../Asset/assets/instagram_icon.png'
@@ -36,7 +35,7 @@ function Footer() {
       </ul>
       <p className="copyrighttext">
         &copy; 1997-2023    Netflix, Inc. 
-        &copy; 2025 | Joseph Teka
+      2025 | Joseph Teka
       </p>
       
     </div>
