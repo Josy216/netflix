@@ -5,10 +5,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "base": "/netflix",
+    "base": "/netflix/my-netflix",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "preview": "vite preview"
   },
   "dependencies": {
