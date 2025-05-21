@@ -16,9 +16,6 @@ function TitleCard({title,isposter,  category}) {
   }
 };
 
-
-
-
   const handleclick = (event)=>{
   event.preventDefault(); 
   cardsRef.current.scrollLeft += event.deltaY;
@@ -31,7 +28,7 @@ fetch(`https://api.themoviedb.org/3/movie/${category?category:"now_playing"}?lan
   .catch(err => console.error(err));
 
     cardsRef.current.addEventListener('wheel', handleclick)
-  }, [])
+  }, [movie])
 
 
 
@@ -45,6 +42,12 @@ let trainler = data.results.find(
         if(trainler){
           setMovie(trainler.key)
         }
+        setTimeout(() => {
+          cardsRef.current.scrollIntoView({
+            behavior: "smooth",
+          })  
+        }, 100);
+        
     })
 
   return (
@@ -52,7 +55,6 @@ let trainler = data.results.find(
       <h2>{title?title:"Pupular on Netflix"}</h2>
       <div className="cardlist" ref={cardsRef}>
         {apiData.map((card, index)=>{
-          console.log(card);
           
           return <div  className="card" onClick={()=>handlevedios(card.id)} key={index}>
             <img src={`https://image.tmdb.org/t/p/w500${isposter? card.poster_path: card.backdrop_path}`} className = { isposter ? `poster` : ""} alt="" />

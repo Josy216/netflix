@@ -13,7 +13,8 @@ function Home() {
   const navigateto = useRef()
   const [togle, setTogle] = useState(false);
 
-  const moreInfo=()=>{
+  const moreInfo=(e)=>{
+    e.preventDefault();
     setTogle(!togle)
   }
 
@@ -35,13 +36,6 @@ function Home() {
   
   
   
-    useEffect(()=>{
-  fetch(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1`, options)
-    .then(res => res.json())
-    .then(res => setApiData(res.results))
-    .catch(err => console.error(err));
-  
-    }, [])
 
 
    const handleplay = (async (id)=>{
@@ -57,8 +51,15 @@ let trainler = data.results.find(
 navigateto.current?.scrollIntoView({
   behavior: "smooth",
 })  }, 100);
-console.log(trainler);
     })
+
+    useEffect(()=>{
+  fetch(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1`, options)
+    .then(res => res.json())
+    .then(res => setApiData(res.results))
+    .catch(err => console.error(err));
+  
+    }, [])
 
     
    
@@ -75,7 +76,7 @@ console.log(trainler);
               <button className='btn darkbtn' onClick={moreInfo}><img src={infoIcon} alt="" />More Info</button>
             </div>
             <div className="cardstitle">
-            <TitleCard  isposter = {true}/>  
+            <TitleCard isposter = {true}/>  
             </div>
           </div>
 
