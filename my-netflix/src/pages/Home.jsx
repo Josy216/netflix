@@ -34,10 +34,6 @@ function Home() {
     singleCard = apiData[Math.floor(Math.random() * apiData.length)]; 
   }
   
-  
-  
-
-
    const handleplay = (async (id)=>{
 const results = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`, options)
 const data = await results.json()
@@ -60,9 +56,6 @@ navigateto.current?.scrollIntoView({
     .catch(err => console.error(err));
   
     }, [])
-
-    
-   
   return (
     <div className='home'>
         <Header />
