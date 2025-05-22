@@ -30,9 +30,6 @@ function Home() {
     }
   };
   let singleCard;
-  if(apiData.length > 0){
-    singleCard = apiData[Math.floor(Math.random() * apiData.length)]; 
-  }
   
    const handleplay = (async (id)=>{
 const results = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`, options)
@@ -42,6 +39,7 @@ let trainler = data.results.find(
         );
         if(trainler){
           setMovie(trainler.key)
+          
         }
         setTimeout(() => {
 navigateto.current?.scrollIntoView({
@@ -52,20 +50,30 @@ navigateto.current?.scrollIntoView({
     useEffect(()=>{
   fetch(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1`, options)
     .then(res => res.json())
-    .then(res => setApiData(res.results))
+
+    .then(res => {
+      const randomIndex = Math.floor(Math.random() * res.results.length);
+      singleCard = res.results[randomIndex];
+      setApiData(singleCard)
+      
+      setMovie(singleCard.id)
+    })
     .catch(err => console.error(err));
   
     }, [])
+
+
+
   return (
     <div className='home'>
         <Header />
         <div className="hero">
-          {singleCard && <img src={`https://image.tmdb.org/t/p/original${singleCard.backdrop_path}`} className='bannerimage' alt="" />}
+          {apiData && <img src={`https://image.tmdb.org/t/p/original${apiData?.backdrop_path}`} className='bannerimage' alt="" />}
           <div className="herocaption">
-            <h1>{singleCard?singleCard.title:""}</h1>
-            <p className={togle?"overview":"underview"}>{singleCard?singleCard.overview : ""}</p>
+            <h1>{apiData?.original_title}</h1>
+            <p className={togle?"overview":"underview"}>{apiData?.overview}</p>
             <div className="herobtn"> 
-              <button className='btn' onClick={()=>handleplay(singleCard.id)}><img src={playIcon} alt="" />play</button>
+              <button className='btn' onClick={()=>handleplay(apiData.id)}><img src={playIcon} alt="" />play</button>
               <button className='btn darkbtn' onClick={moreInfo}><img src={infoIcon} alt="" />More Info</button>
             </div>
             <div className="cardstitle">
