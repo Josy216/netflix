@@ -34,13 +34,43 @@
     position: relative;
     border-radius: 10px;
 }
-.player .close{
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 55px;
-
+.rapped{
+    position: relative;
 }
+.rapped .close{
+position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  z-index: 1000;
+}
+.close::before,
+.close::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  background: #fff;
+}
+.close::before {
+  transform: rotate(45deg);
+}
+.close::after {
+  transform: rotate(-45deg);
+}
+.rapped .close:hover{
+    background: rgba(255, 0, 0, 0.7);
+    transform: scale(1.1);
+}   
 @media (max-width:800px){
     
     .cardlist{

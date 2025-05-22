@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './home.css'
+import '../components/titleCards/titleCard.css'
 import Header from '../components/Header/Header'
 // import hero from '../Asset/assets/hero_banner.jpg'
 // import herotitle from '../Asset/assets/hero_title.png'
@@ -12,6 +13,7 @@ const API_KEY = import.meta.env.VITE_API_KEY;
 function Home() {
   const navigateto = useRef()
   const [togle, setTogle] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const moreInfo=(e)=>{
     e.preventDefault();
@@ -19,7 +21,7 @@ function Home() {
   }
 
   
-    const [movie, setMovie] = useState(null);
+    const [movie, setMovie] = useState("");
     const [apiData, setApiData] = useState([]);
 
     const options = {
@@ -32,6 +34,7 @@ function Home() {
   let singleCard;
   
    const handleplay = (async (id)=>{
+    setIsLoading(true)
 const results = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`, options)
 const data = await results.json()
 let trainler = data.results.find(
@@ -45,6 +48,7 @@ let trainler = data.results.find(
 navigateto.current?.scrollIntoView({
   behavior: "smooth",
 })  }, 100);
+        setIsLoading(false) 
     })
 
     useEffect(()=>{
@@ -56,7 +60,6 @@ navigateto.current?.scrollIntoView({
       singleCard = res.results[randomIndex];
       setApiData(singleCard)
       
-      setMovie(singleCard.id)
     })
     .catch(err => console.error(err));
   
@@ -83,9 +86,14 @@ navigateto.current?.scrollIntoView({
 
         </div>
         <div className="morecards">
+          {console.log(movie)}
           
-      {movie?<iframe width="100%" height="350px" ref={navigateto}
-       src={`https://www.youtube.com/embed/${movie}`} title='trailer' frameBorder='0' allowFullScreen ></iframe>:""}
+      {movie&&!isLoading&& <div className="rapped"><iframe width="100%" height="350px" ref={navigateto}
+       src={`https://www.youtube.com/embed/${movie}`} title='trailer' frameBorder='0' allowFullScreen ></iframe>
+       <button className='close' onClick={()=>setMovie(null)}>
+        
+      </button>
+       </div>}
           <TitleCard  title={"Pupular on Netflix"} category={"popular"}/>
           <TitleCard  title={"Blockbuster movie"} category={"top_rated"}/>
           <TitleCard  title={"upComing"} category={"upcoming"}/>

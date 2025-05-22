@@ -62,11 +62,11 @@ let trainler = data.results.find(
           </div >
         })}
       </div>
-      {movie&&<><iframe width="100%" height="350px" src={`https://www.youtube.com/embed/${movie}`} title='trailer' frameBorder='0' allowFullScreen ></iframe> 
-      <span className='close' onClick={()=>setMovie(null)}>
-        X
-      </span>
-      </>}
+      {movie&&<div className='rapped'><iframe width="100%" height="350px" src={`https://www.youtube.com/embed/${movie}`} title='trailer' frameBorder='0' allowFullScreen ></iframe> 
+      <button className='close' onClick={()=>setMovie(null)}>
+        
+      </button>
+      </div>}
       
     </div>
   )
