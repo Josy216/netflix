@@ -1,11 +1,10 @@
 {
   "homepage": "https://Josy216.github.io/netflix/my-netflix",
-  "name": "my-netflix",
+  "name": "/my-netflix",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "base": "/netflix/my-netflix",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
